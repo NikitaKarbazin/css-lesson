@@ -1,0 +1,133 @@
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.page__body {
+  margin: 0;
+}
+
+.page__header {
+  position: sticky;
+  top: 0;
+}
+
+.page__footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+}
+
+.header {
+  --header-height: 60px;
+
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.header__logo {
+  display: block;
+  padding: 20px 30px;
+  margin-left: -30px;
+
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__logo:hover {
+  color: #ff0;
+  background-color: #111;
+}
+
+.main {
+  text-align: justify;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+/* #region Nav */
+.nav {
+  --link-padding-x: 25px;
+  margin-right: calc(0px - var(--link-padding-x));
+  text-align: center;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: var(--header-height);
+  padding: 10px var(--link-padding-x);
+
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 540px) {
+  .nav__toggler {
+    display: none;
+  }
+}
+
+.nav__list {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.nav--open .nav__list {
+  height: auto;
+}
+
+@media (min-width: 540px) {
+  .nav__list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+  }
+}
+
+.nav__toggler::before {
+  content: '=';
+}
+
+.nav--open .nav__toggler::before {
+  content: 'x';
+}
+
+.nav__link:hover {
+  color: #ff0;
+  background-color: #111;
+}
+
+/* #endregion Nav */
+
+.footer {
+  display: flex;
+
+  height: 300px;
+
+  color: #fff;
+
+  background-image: url("https://mate-academy.github.io/fe-program/assets/MA_bottom.jpg");
+  background-size: cover;
+  background-position: top;
+}
